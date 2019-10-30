@@ -1,0 +1,17 @@
+{
+  "name": "asch-dapp-cctime-test",
+  "link": "https://github.com/AschPlatform/asch-dapp-cctime/archive/master1.zip",
+  "category": 1,
+  "description": "Decentralized news channel",
+  "tags": "asch,dapp,demo,cctime",
+  "icon": "http://o7dyh3w0x.bkt.clouddn.com/hello1.png",
+  "type": 0,
+  "delegates": [
+    "afdf69f0da9ff333218f2cd10cb0a907c2e76788f752b799cb1dab3a9f03bf63",
+    "67d52a0265f9e5366660c8b384cee56d3f8b5737b2dd3c617d22df83b5ebef02",
+    "39c2322600a0c81ecfa97119ec8e2d5bfb73394914d92b54e961846a987e4e22",
+    "4740d2c16bf6c5a174eba1e0f859253a64851d30acbc9655b01394af82d3e325",
+    "b433c226645981477642491f77de7b8d63274aa51f932bbe1fe3f445a8aaecc9"
+  ],
+  "unlockDelegates": 3
+}

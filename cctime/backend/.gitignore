@@ -1,0 +1,6 @@
+blockchain.db
+logs
+.eslintrc.js
+node_modules/*
+package-lock.json
+.vscode/*
