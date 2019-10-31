@@ -68,6 +68,7 @@ class Blockchain {
   }
 }
 
+// 区块链示例
 const testCoin = new Blockchain();
 console.log(JSON.stringify(testCoin.chain, undefined, 2));
 
@@ -80,4 +81,15 @@ block2.addNewTransaction('Jack', 'David', 1000);
 testCoin.addBlock(block2);
 
 console.log(JSON.stringify(testCoin.chain, undefined, 2));
+console.log(testCoin.isChainValid())
+
+// 验证防篡改特性
+// 1. 修改交易
+block1.transactions[0].amount = 100;
+console.log(block1.getTransactions())
+console.log(testCoin.isChainValid())
+
+// 2.修改交易&修改区块哈希
+block1.transactions[0].amount = 100;
+block1.hash = block1.calculateHash();
 console.log(testCoin.isChainValid())
