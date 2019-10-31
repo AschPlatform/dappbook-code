@@ -14,14 +14,7 @@ class Block {
   calculateHash() {
     return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).toString();
   }
-  // 添加新的交易到当前区块
-  addNewTransaction(sender, recipient, amount) {
-    this.transactions.push({
-      sender,
-      recipient,
-      amount
-    })
-  }
+
   // 查看当前区块里的交易信息
   getTransactions() {
     return this.transactions;
@@ -41,13 +34,27 @@ class Block {
 class Blockchain {
   constructor() {
     this.chain = [this.createGenesisBlock()];
-    this.difficulty = 2;
+    this.difficulty = 3;
+    this.currentTransactions = [];
+  }
+
+  // 添加新的交易到当前区块
+  addNewTransaction(sender, recipient, amount) {
+    this.currentTransactions.push({
+      sender,
+      recipient,
+      amount
+    })
   }
   // 创建创始区块
   createGenesisBlock() {
     const genesisBlock = new Block(0, "01/10/2017");
     genesisBlock.previousHash = '0';
-    genesisBlock.addNewTransaction('Leo', 'Janice', 520);
+    genesisBlock.transactions.push({
+      sender: 'Leo',
+      recipient: 'Janice',
+      amount: 520
+    });
     return genesisBlock;
   }
   // 获取最新区块
@@ -80,6 +87,11 @@ class Blockchain {
   }
 }
 
+module.exports = {
+  Block,
+  Blockchain
+}
+
 // // 区块链示例
 // const testCoin = new Blockchain();
 // console.log(JSON.stringify(testCoin.chain, undefined, 2));
@@ -106,10 +118,10 @@ class Blockchain {
 // block1.hash = block1.calculateHash();
 // console.log(testCoin.isChainValid())
 
-const testCoin = new Blockchain();
+// const testCoin = new Blockchain();
 
-let block1 = new Block('1', '02/10/2017');
-block1.addNewTransaction('Alice', 'Bob', 500);
-testCoin.addBlock(block1);
+// let block1 = new Block('1', '02/10/2017');
+// block1.addNewTransaction('Alice', 'Bob', 500);
+// testCoin.addBlock(block1);
 
-console.log(block1)
+// console.log(block1)
