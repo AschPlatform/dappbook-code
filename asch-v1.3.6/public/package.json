@@ -45,7 +45,7 @@
     "gulp-useref": "^2.0.0",
     "gulp-util": "^3.0.7",
     "json-beautify": "^1.0.1",
-    "node-sass": "^3.13.1",
+    "node-sass": "^4.14.1",
     "run-sequence": "^1.1.4"
   }
 }
